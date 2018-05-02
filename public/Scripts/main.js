@@ -94,6 +94,7 @@ $(function () {
             $('.loading').fadeIn(300);
             $('.face').remove();
         }
+
         const fileInput = document.querySelector( '.img-upload' ).files[0];
         const token = document.querySelector( 'meta[name="_token"]' );
 
@@ -109,6 +110,9 @@ $(function () {
         })
             .then(function (response) {
                 $('.loading').fadeOut(300);
+                axios.post('/face/detect/store', {
+                    data: response.data
+                });
                 // var object = $.parseJSON(response.data);
 
                 $.each(response.data, function (i, item) {

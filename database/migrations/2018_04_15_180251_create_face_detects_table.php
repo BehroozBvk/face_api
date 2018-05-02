@@ -17,6 +17,7 @@ class CreateFaceDetectsTable extends Migration
             $table->increments('id');
             $table->text('data');
             $table->text('ip');
+            $table->text('image');
             $table->timestamps();
         });
     }

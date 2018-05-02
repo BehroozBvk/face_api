@@ -8,6 +8,7 @@
 
 namespace App\Http\Traits;
 
+use App\FaceDetect;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 
@@ -79,7 +80,8 @@ trait FaceDetectApi
 
         try {
             $response = $request->send();
-			return $this->detectProcess( $response->getBody() );
+            $image = isset($name) ? $name:$img;
+            return $this->detectProcess($response->getBody(),$image);
 //            return $response->getBody();
         } catch (\HttpException $ex) {
             return $ex;
@@ -90,7 +92,7 @@ trait FaceDetectApi
     /**
      * @param $faces
      */
-    public function detectProcess($faces)
+    public function detectProcess($faces,$image)
     {
 
         $data = array();
@@ -103,9 +105,10 @@ trait FaceDetectApi
             $data['emotion'] = $this->emotion($item['faceAttributes']['emotion']);
             $data['makeup'] = $this->makeup($item['faceAttributes']['makeup']);
 
+
             return $data;
         });
-
+        $collection = array_add($collection,'image',$image);
         return $collection;
 
 
