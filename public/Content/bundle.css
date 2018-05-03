@@ -1703,3 +1703,4 @@ button.close { -webkit-appearance: none; padding: 0; cursor: pointer; background
 @media print {
  .hidden-print { display: none !important; }
 }
+.face-rectangle-image{display: none !important;}

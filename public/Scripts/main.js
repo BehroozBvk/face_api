@@ -11,7 +11,7 @@ $(function () {
 
     $(".btn-img").on("click", function () {
         var url = $('.img-url').val();
-        if (url.length){
+        if (url.length) {
             $('.get-face').attr('src', url);
         }
         detect(url);
@@ -26,7 +26,7 @@ $(function () {
 
 
     function detect(url) {
-        if (url.length){
+        if (url.length) {
             $('.loading').fadeIn(300);
             $('.face').remove();
         }
@@ -37,13 +37,14 @@ $(function () {
         })
             .then(function (response) {
 
-
                 $('.loading').fadeOut(300);
                 // var object = $.parseJSON(response.data);
                 axios.post('/face/detect/store', {
                     data: response.data
                 });
+
                 $.each(response.data, function (i, item) {
+
 
                     $('.demo-img-wrapper').append(
                         '<div class="face img-rounded face-rectangle-' + i + ' face-rectangle-f">' +
@@ -68,10 +69,14 @@ $(function () {
                         "height": height + "%",
                         "border-color": ((item.gender == 'زن') ? " yellow" : "green")
                     });
+
+
                 });
+
 
             })
             .catch(function (error) {
+
                 $.each(error.response.data.url, function (index, item) {
 
                     $.toast({
@@ -83,37 +88,35 @@ $(function () {
                         hideAfter: 3500
 
                     });
-                    console.log();
 
                 });
             });
     }
 
     function detectByUploadFile(url) {
-        if (url.length){
+        if (url.length) {
             $('.loading').fadeIn(300);
             $('.face').remove();
         }
 
-        const fileInput = document.querySelector( '.img-upload' ).files[0];
-        const token = document.querySelector( 'meta[name="_token"]' );
+        const fileInput = document.querySelector('.img-upload').files[0];
+        const token = document.querySelector('meta[name="_token"]');
 
         var formData = new FormData();
 
-        var settings = { headers: { 'Content-type': 'multipart/form-data' }};
-        formData.append( 'imgUpload', fileInput,fileInput.name );
+        var settings = {headers: {'Content-type': 'multipart/form-data'}};
+        formData.append('imgUpload', fileInput, fileInput.name);
         axios({
             method: 'post',
             url: 'face/detect',
             data: formData,
-            config: { headers: {'Content-Type': 'multipart/form-data' }}
+            config: {headers: {'Content-Type': 'multipart/form-data'}}
         })
             .then(function (response) {
                 $('.loading').fadeOut(300);
                 axios.post('/face/detect/store', {
                     data: response.data
                 });
-                // var object = $.parseJSON(response.data);
 
                 $.each(response.data, function (i, item) {
 
@@ -140,6 +143,8 @@ $(function () {
                         "height": height + "%",
                         "border-color": ((item.gender == 'زن') ? " yellow" : "green")
                     });
+
+
                 });
             })
             .catch(function (error) {
