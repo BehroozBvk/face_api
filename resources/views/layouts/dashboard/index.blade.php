@@ -19,7 +19,7 @@
     <script type="text/javascript">
         $.toast({
             heading: 'پنل مدیریت',
-            text: 'سلام مدیر گرامی به پنل مدیریت خوش آمدید',
+            text: 'سلام {{auth()->user()->name}} گرامی به پنل مدیریت خوش آمدید',
             position: 'top-right',
             loaderBg: '#00a619',
             icon: 'success',

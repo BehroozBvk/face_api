@@ -5,6 +5,7 @@
 <!-- All Jquery -->
 <!-- ============================================================== -->
 <script src="{{asset('assets/plugins/jquery/jquery.min.js')}}"></script>
+@yield('script')
 
 <!-- Bootstrap tether Core JavaScript -->
 <script src="{{asset('assets/plugins/bootstrap/js/popper.min.js')}}"></script>
@@ -19,7 +20,6 @@
 <script src="{{asset('assets/plugins/sticky-kit-master/dist/sticky-kit.min.js')}}"></script>
 <!--Custom JavaScript -->
 <script src="{{asset('js/custom.min.js')}}"></script>
-@yield('script')
 <!-- ============================================================== -->
 <!-- Style switcher -->
 <!-- ============================================================== -->

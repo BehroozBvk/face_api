@@ -4143,13 +4143,15 @@ ul.social-icons li.pinterest:hover {
     top: 0;
     left: 0;
     bottom: 0;
+}
+.btn-upload{
     cursor: default !important;
 }
-
 #subscribe .subcribe-form input {
     height: 44px;
     border-radius: 25px;
-    border: 1px solid #bf095d
+    border: 1px solid #bf095d;
+    outline: none;
 }
 
 #subscribe .subcribe-form input::-webkit-input-placeholder {

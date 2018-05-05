@@ -5,12 +5,19 @@ namespace App\Http\Controllers;
 use App\FaceDetect;
 use Illuminate\Http\Request;
 
-class ReportController extends Controller
-{
-	public function reports()
-	{
-		$faces = FaceDetect::all();
-		dd(json_decode($faces[1]['data']));
-		return view('layouts.dashboard.reports.reports',compact('faces'));
+class ReportController extends Controller {
+
+	/**
+	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+	 */
+	public function reports() {
+
+		// check request is ajax and return all face records database
+		if ( request()->wantsJson() ) {
+			return response()->json( FaceDetect::all() );
+		}
+
+		return view( 'layouts.dashboard.reports.reports' );
 	}
+
 }

@@ -43,7 +43,7 @@ $(function () {
                     data: response.data
                 });
 
-                $.each(response.data, function (i, item) {
+                $.each(response.data.result, function (i, item) {
 
 
                     $('.demo-img-wrapper').append(
@@ -118,7 +118,7 @@ $(function () {
                     data: response.data
                 });
 
-                $.each(response.data, function (i, item) {
+                $.each(response.data.result, function (i, item) {
 
                     $('.demo-img-wrapper').append(
                         '<div class="face img-rounded face-rectangle-' + i + ' face-rectangle-f">' +

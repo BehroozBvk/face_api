@@ -35,8 +35,9 @@ class FaceDetectController extends Controller {
 
 
 	public function store( Request $request ) {
+
 		$save = FaceDetect::create( [
-			'data'  => collect( $request->data ),
+			'data'  => collect( $request->data['result'] ),
 			'ip'    => $request->ip(),
 			'image' => collect( $request->data )['image']
 		] );

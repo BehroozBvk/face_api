@@ -17,6 +17,7 @@ Route::middleware(['validateBackHistory'])->group(function () {
 
 		Route::get('/', 'DashboardController@index')->name('admin.index');
 		Route::get('reports', 'ReportController@reports')->name('admin.reports');
+		Route::get('reports/results', 'ReportController@getReport')->name('admin.reports.results');
 
 
 	});
