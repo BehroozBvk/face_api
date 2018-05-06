@@ -2,7 +2,7 @@
 @section('script')
     <script src="{{asset('Scripts/axios.min.js')}}"></script>
     <script src="{{asset('js/vue.js')}}"></script>
-    <script src="{{asset('Scripts/app.js')}}"></script>
+    <script src="{{asset('Scripts/report.js')}}"></script>
 @endsection
 @section('content')
     <div class="row">
@@ -17,16 +17,14 @@
                                 <th>تصویر</th>
                                 <th>آی پی</th>
                                 <th>جنسیت</th>
-                                <th>نقش کاربر</th>
                             </tr>
                             </thead>
                             <tbody>
                             {{--@foreach($faces as $face)--}}
-                                <tr v-for="result in results ">
-                                    <td><img class="img-circle" width="50" height="50" src="" alt=""></td>
-                                    <td>@{{ result.ip }}</td>
-                                    <td>@{{ result.data.gender }}</td>
-                                    <td><span class="label label-danger">مدیر</span></td>
+                                <tr v-for="result in results">
+                                    <td><img class="img-circle" width="50" height="50"  :src="result.image" alt=""></td>
+                                    <td>@{{ result.ip }} </td>
+                                    <td><span v-for="item in result.data" class="label label-danger">@{{item.gender}}</span></td>
                                 </tr>
                             {{--@endforeach--}}
                             </tbody>

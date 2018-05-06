@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class FaceDetect extends Model {
 	protected $fillable = [ 'data', 'ip', 'image' ];
-	protected $casts = [ 'data' => 'json' ];
+	protected $casts = [ 'data' => 'array' ];
 
 	public function setImageAttribute( $value ) {
 		if ( substr( $value, 0, 1 ) == '{' ) {
@@ -24,5 +24,6 @@ class FaceDetect extends Model {
 			return url( 'uploads' ) . '/' . $value;
 		}
 	}
+
 
 }
