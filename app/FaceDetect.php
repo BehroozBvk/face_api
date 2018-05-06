@@ -25,5 +25,4 @@ class FaceDetect extends Model {
 		}
 	}
 
-
 }

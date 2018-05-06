@@ -808,7 +808,8 @@ html body .waves-notransition {
 
 .text-success {
   color: #55ce63 !important; }
-
+.text-yellow {
+  color: #f6e700 !important; }
 .text-info {
   color: #009efb !important; }
 
@@ -816,7 +817,7 @@ html body .waves-notransition {
   color: #2f3d4a !important; }
 
 .text-blue {
-  color: #02bec9; }
+  color: #009efb; }
 
 .text-purple {
   color: #7460ee; }

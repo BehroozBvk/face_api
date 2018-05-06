@@ -136,7 +136,11 @@ trait FaceDetectApi {
 	}
 
 	public function age( $attributes ) {
-		return (integer) ( $attributes );
+		if ( $attributes > 1 ) {
+			return (integer) ( $attributes );
+		}
+
+		return round($attributes,0);
 	}
 
 	public function glasses( $attributes ) {

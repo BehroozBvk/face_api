@@ -11,54 +11,54 @@ Morris.Area({
         element: 'morris-area-chart',
         data: [{
             period: '1389',
-            iphone: 50,
-            ipad: 80,
-            itouch: 20
+            male: male_count,
+            women: women_count,
+            avg: (age_male_avg + age_women_avg) /2
         }, {
             period: '1390',
-            iphone: 130,
-            ipad: 100,
-            itouch: 80
+            male: 130,
+            women: 100,
+            avg: 80
         }, {
             period: '1391',
-            iphone: 80,
-            ipad: 60,
-            itouch: 70
+            male: 80,
+            women: 60,
+            avg: 70
         }, {
             period: '1392',
-            iphone: 70,
-            ipad: 200,
-            itouch: 140
+            male: 70,
+            women: 200,
+            avg: 140
         }, {
             period: '1393',
-            iphone: 180,
-            ipad: 150,
-            itouch: 140
+            male: 180,
+            women: 150,
+            avg: 140
         }, {
             period: '1394',
-            iphone: 105,
-            ipad: 100,
-            itouch: 80
+            male: 105,
+            women: 100,
+            avg: 80
         },
          {
             period: '1395',
-            iphone: 250,
-            ipad: 150,
-            itouch: 200
+            male: 250,
+            women: 150,
+            avg: 200
         }],
         xkey: 'period',
-        ykeys: ['iphone', 'ipad', 'itouch'],
-        labels: ['بچه', 'زن', 'مرد'],
+        ykeys: ['avg', 'women', 'male'],
+        labels: ['میانگین', 'زن', 'مرد'],
         pointSize: 3,
         fillOpacity: 0,
-        pointStrokeColors:['#55ce63', '#009efb', '#2f3d4a'],
+        pointStrokeColors:['#f6e700', '#009efb', '#55ce63'],
         behaveLikeLine: true,
         gridLineColor: '#e0e0e0',
         lineWidth: 3,
         hideHover: 'auto',
-        lineColors: ['#55ce63', '#009efb', '#2f3d4a'],
+        lineColors: ['#f6e700', '#009efb', '#55ce63'],
         resize: true
-        
+
     });
 
 Morris.Area({
@@ -67,38 +67,38 @@ Morris.Area({
             period: '1390',
             SiteA: 0,
             SiteB: 0,
-            
+
         }, {
             period: '1391',
             SiteA: 130,
             SiteB: 100,
-            
+
         }, {
             period: '1392',
             SiteA: 80,
             SiteB: 60,
-            
+
         }, {
             period: '1393',
             SiteA: 70,
             SiteB: 200,
-            
+
         }, {
             period: '1394',
             SiteA: 180,
             SiteB: 150,
-            
+
         }, {
             period: '1395',
             SiteA: 105,
             SiteB: 90,
-            
+
         },
          {
             period: '1396',
             SiteA: 250,
             SiteB: 150,
-           
+
         }],
         xkey: 'period',
         ykeys: ['SiteA', 'SiteB'],
@@ -113,7 +113,7 @@ Morris.Area({
         hideHover: 'auto',
         lineColors: ['#b4becb', '#009efb'],
         resize: true
-        
+
     });
 
 
@@ -142,7 +142,7 @@ Morris.Area({
           hideHover: 'auto'
         });
  // Morris donut chart
-        
+
     Morris.Donut({
         element: 'morris-donut-chart',
         data: [{
@@ -212,46 +212,46 @@ Morris.Area({
         element: 'extra-area-chart',
         data: [{
                     period: '1391',
-                    iphone: 0,
-                    ipad: 0,
-                    itouch: 0
+                    male: 0,
+                    women: 0,
+                    avg: 0
                 }, {
                     period: '1392',
-                    iphone: 50,
-                    ipad: 15,
-                    itouch: 5
+                    male: 50,
+                    women: 15,
+                    avg: 5
                 }, {
                     period: '1393',
-                    iphone: 20,
-                    ipad: 50,
-                    itouch: 65
+                    male: 20,
+                    women: 50,
+                    avg: 65
                 }, {
                     period: '1394',
-                    iphone: 60,
-                    ipad: 12,
-                    itouch: 7
+                    male: 60,
+                    women: 12,
+                    avg: 7
                 }, {
                     period: '1395',
-                    iphone: 30,
-                    ipad: 20,
-                    itouch: 120
+                    male: 30,
+                    women: 20,
+                    avg: 120
                 }, {
                     period: '1396',
-                    iphone: 25,
-                    ipad: 80,
-                    itouch: 40
+                    male: 25,
+                    women: 80,
+                    avg: 40
                 }, {
                     period: '1397',
-                    iphone: 10,
-                    ipad: 10,
-                    itouch: 10
+                    male: 10,
+                    women: 10,
+                    avg: 10
                 }
 
 
                 ],
                 lineColors: ['#55ce63', '#2f3d4a', '#009efb'],
                 xkey: 'period',
-                ykeys: ['iphone', 'ipad', 'itouch'],
+                ykeys: ['male', 'women', 'avg'],
                 labels: ['سایت الف', 'سایت ب', 'سایت ج'],
                 pointSize: 0,
                 lineWidth: 0,
@@ -260,6 +260,6 @@ Morris.Area({
                 behaveLikeLine: true,
                 gridLineColor: '#e0e0e0',
                 hideHover: 'auto'
-        
+
     });
- });    
+ });

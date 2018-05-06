@@ -1,6 +1,8 @@
 @extends('layouts.dashboard.master.master')
 @section('style')
-    <link href="{{asset('assets/plugins/chartist-js/dist/chartist.min.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/plugins/chartist-js/dist/chartist.min.css')}}" rel="stylesheet"
+          xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml"
+          xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
     <link href="{{asset('assets/plugins/chartist-js/dist/chartist-init.css')}}" rel="stylesheet">
     <link href="{{asset('assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css')}}"
           rel="stylesheet">
@@ -10,10 +12,25 @@
 
 @endsection
 @section('script')
+    <script type="text/javascript">
+        var age_male_avg = {{$data['age_male_avg']}};
+        var age_male_max = {{$data['age_male_max']}};
+        var age_male_min = {{$data['age_male_min']}};
+        var age_women_avg = {{$data['age_women_avg']}};
+        var age_women_max = {{$data['age_women_max']}};
+        var age_women_min = {{$data['age_women_min']}};
+        var male_count = {{$data['male_count']}};
+        var total = {{ $data['total'] }};
+        var women_count = {{$data['women_count']}};
+    </script>
     <!--Morris JavaScript -->
     <script src="{{asset('assets/plugins/raphael/raphael-min.js')}}"></script>
     <script src="{{asset('assets/plugins/morrisjs/morris.js')}}"></script>
     <script src="{{asset('js/morris-data.js')}}"></script>
+
+    <script src="{{asset('Scripts/axios.min.js')}}"></script>
+    <script src="{{asset('js/vue.js')}}"></script>
+    <script src="{{asset('Scripts/dashboard.js')}}"></script>
     <!-- ============================================================== -->
     <script src="{{asset('assets/plugins/toast-master/js/jquery.toast.js')}}"></script>
     <script type="text/javascript">
@@ -31,7 +48,7 @@
 @endsection
 
 @section('content')
-    <div class="col-lg-12">
+    <div class="col-lg-12" id="app-dashboard">
         <!-- Row -->
         <div class="row">
             <!-- Column -->
@@ -41,11 +58,12 @@
                     <div class="row p-t-10 p-b-10">
                         <!-- Column -->
                         <div class="col p-r-0">
-                            <h1 class="font-light">86</h1>
+                            <h1 class="font-light">@{{ total }}</h1>
                             <h6 class="text-muted">کل درخواست ها</h6></div>
                         <!-- Column -->
                         <div class="col text-right align-self-center">
-                            <div data-label="20%" class="css-bar m-b-0 css-bar-primary css-bar-20"><i
+                            <div :data-label="`${total}%`" class="css-bar m-b-0 css-bar-primary"
+                                 :class="['css-bar-' + total]"><i
                                         class="mdi mdi-repeat"></i></div>
                         </div>
                     </div>
@@ -58,11 +76,12 @@
                     <div class="row p-t-10 p-b-10">
                         <!-- Column -->
                         <div class="col p-r-0">
-                            <h1 class="font-light">248</h1>
+                            <h1 class="font-light">@{{ male_count }}</h1>
                             <h6 class="text-muted">جنسیت مرد</h6></div>
                         <!-- Column -->
                         <div class="col text-right align-self-center">
-                            <div data-label="30%" class="css-bar m-b-0 css-bar-danger css-bar-20"><i
+                            <div :data-label="`${male_count}%`" class="css-bar m-b-0 css-bar-danger"
+                                 :class="['css-bar-' + male_count]"><i
                                         class="icon-user"></i></div>
                         </div>
                     </div>
@@ -75,11 +94,12 @@
                     <div class="row p-t-10 p-b-10">
                         <!-- Column -->
                         <div class="col p-r-0">
-                            <h1 class="font-light">352</h1>
+                            <h1 class="font-light">@{{ women_count }}</h1>
                             <h6 class="text-muted">جنسیت زن</h6></div>
                         <!-- Column -->
                         <div class="col text-right align-self-center">
-                            <div data-label="40%" class="css-bar m-b-0 css-bar-warning css-bar-40"><i
+                            <div :data-label="`${women_count}%`" class="css-bar m-b-0 css-bar-warning"
+                                 :class="['css-bar-' + women_count]"><i
                                         class="icon-user-female"></i></div>
                         </div>
                     </div>
@@ -92,11 +112,12 @@
                     <div class="row p-t-10 p-b-10">
                         <!-- Column -->
                         <div class="col p-r-0">
-                            <h1 class="font-light">159</h1>
+                            <h1 class="font-light">@{{ avg }}</h1>
                             <h6 class="text-muted">میانگین سن</h6></div>
                         <!-- Column -->
                         <div class="col text-right align-self-center">
-                            <div data-label="60%" class="css-bar m-b-0 css-bar-info css-bar-60"><i
+                            <div :data-label="`${parseInt(avg)}%`" class="css-bar m-b-0 css-bar-info"
+                                 :class="['css-bar-' + parseInt(avg)]"><i
                                         class="mdi mdi-gauge"></i></div>
                         </div>
                     </div>
@@ -111,13 +132,13 @@
                         <h4 class="card-title">گزارشات</h4>
                         <ul class="list-inline text-right">
                             <li>
-                                <h5><i class="fa fa-circle m-r-5 text-inverse"></i>مرد</h5>
+                                <h5><i class="fa fa-circle m-r-5 text-success"></i>مرد</h5>
                             </li>
                             <li>
-                                <h5><i class="fa fa-circle m-r-5 text-info"></i>زن</h5>
+                                <h5><i class="fa fa-circle m-r-5 text-yellow"></i>زن</h5>
                             </li>
                             <li>
-                                <h5><i class="fa fa-circle m-r-5 text-success"></i>بچه</h5>
+                                <h5><i class="fa fa-circle m-r-5 text-blue"></i>میانگین</h5>
                             </li>
                         </ul>
                         <div id="morris-area-chart"></div>
