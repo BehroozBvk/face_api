@@ -13,9 +13,10 @@
 Auth::routes();
 
 Route::middleware(['validateBackHistory'])->group(function () {
-	Route::prefix('admin/dashboard')->middleware(['auth'])->group(function () {
+	Route::prefix('admin/dashboard')->middleware(['auth:web'])->group(function () {
 
 		Route::get('/', 'DashboardController@index')->name('admin.index');
+		Route::get('/chart', 'DashboardController@chart')->name('admin.chart');
 		Route::get('reports', 'ReportController@reports')->name('admin.reports');
 		Route::get('reports/results', 'ReportController@getReport')->name('admin.reports.results');
 

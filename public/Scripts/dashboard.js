@@ -27,7 +27,7 @@ const app = new Vue({
                 this.male_count = response.data.male_count;
                 this.total = response.data.total;
                 this.women_count = response.data.women_count;
-                this.avg = (response.data.age_women_avg + response.data.age_male_avg) / 2;
+                this.avg = Math.round((response.data.age_women_avg + response.data.age_male_avg) / 2);
             })
         }
     }

@@ -13,15 +13,7 @@
 @endsection
 @section('script')
     <script type="text/javascript">
-        var age_male_avg = {{$data['age_male_avg']}};
-        var age_male_max = {{$data['age_male_max']}};
-        var age_male_min = {{$data['age_male_min']}};
-        var age_women_avg = {{$data['age_women_avg']}};
-        var age_women_max = {{$data['age_women_max']}};
-        var age_women_min = {{$data['age_women_min']}};
-        var male_count = {{$data['male_count']}};
-        var total = {{ $data['total'] }};
-        var women_count = {{$data['women_count']}};
+        var items = {!!json_encode($charts) !!};
     </script>
     <!--Morris JavaScript -->
     <script src="{{asset('assets/plugins/raphael/raphael-min.js')}}"></script>
@@ -132,16 +124,17 @@
                         <h4 class="card-title">گزارشات</h4>
                         <ul class="list-inline text-right">
                             <li>
-                                <h5><i class="fa fa-circle m-r-5 text-success"></i>مرد</h5>
+                                <h5><i class="fa fa-circle m-r-5 text-success"></i>حداکثر</h5>
                             </li>
                             <li>
-                                <h5><i class="fa fa-circle m-r-5 text-yellow"></i>زن</h5>
+                                <h5><i class="fa fa-circle m-r-5 text-yellow"></i>حداقل</h5>
                             </li>
                             <li>
                                 <h5><i class="fa fa-circle m-r-5 text-blue"></i>میانگین</h5>
                             </li>
                         </ul>
-                        <div id="morris-area-chart"></div>
+                        {{--<div id="morris-area-chart"></div>--}}
+                        <div id="morris-bar-chart"></div>
                     </div>
                 </div>
             </div>

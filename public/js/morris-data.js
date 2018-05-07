@@ -10,10 +10,10 @@ $(function () {
 Morris.Area({
         element: 'morris-area-chart',
         data: [{
-            period: '1389',
-            male: male_count,
-            women: women_count,
-            avg: (age_male_avg + age_women_avg) /2
+            period: '1390',
+            male: 130,
+            women: 100,
+            avg: 80
         }, {
             period: '1390',
             male: 130,
@@ -163,45 +163,10 @@ Morris.Area({
 // Morris bar chart
     Morris.Bar({
         element: 'morris-bar-chart',
-        data: [{
-            y: '1389',
-            a: 100,
-            b: 90,
-            c: 60
-        }, {
-            y: '1390',
-            a: 75,
-            b: 65,
-            c: 40
-        }, {
-            y: '1391',
-            a: 50,
-            b: 40,
-            c: 30
-        }, {
-            y: '1392',
-            a: 75,
-            b: 65,
-            c: 40
-        }, {
-            y: '1393',
-            a: 50,
-            b: 40,
-            c: 30
-        }, {
-            y: '1394',
-            a: 75,
-            b: 65,
-            c: 40
-        }, {
-            y: '1395',
-            a: 100,
-            b: 90,
-            c: 40
-        }],
-        xkey: 'y',
-        ykeys: ['a', 'b', 'c'],
-        labels: ['الف', 'ب', 'ج'],
+        data: items,
+        xkey: 'key',
+        ykeys: ['age_max', 'age_min', 'age_avg'],
+        labels: ['حداکثر سن ','حداقل سن ','میانگین'],
         barColors:['#55ce63', '#2f3d4a', '#009efb'],
         hideHover: 'auto',
         gridLineColor: '#eef0f2',
