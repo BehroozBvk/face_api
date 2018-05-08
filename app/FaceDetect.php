@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class FaceDetect extends Model {
 	protected $fillable = [ 'data', 'ip', 'image' ];
-	protected $casts = [ 'data' => 'array','created_at'=>'datetime:Y-m-d' ];
+	protected $casts = [ 'data' => 'array'];
+
 
 	public function setImageAttribute( $value ) {
 		if ( substr( $value, 0, 1 ) == '{' ) {

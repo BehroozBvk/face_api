@@ -48,7 +48,7 @@
             <!-- Logo -->
             <!-- ============================================================== -->
             <div class="navbar-header">
-                <a class="navbar-brand" href="index-2.html">
+                <a class="navbar-brand" href="{{route('admin.index')}}">
                     <!-- Logo icon -->
                     <b>
                         <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->

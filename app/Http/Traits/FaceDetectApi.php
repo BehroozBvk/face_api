@@ -80,7 +80,6 @@ trait FaceDetectApi {
 			$image    = isset( $name ) ? $name : $img;
 
 			return $this->detectProcess( $response->getBody(), $image );
-//            return $response->getBody();
 		} catch ( \HttpException $ex ) {
 			return $ex;
 		}
@@ -123,9 +122,6 @@ trait FaceDetectApi {
 		return $attributes;
 	}
 
-	public function hairAttributes( $attributes ) {
-
-	}
 
 	/**
 	 * @param $attributes
@@ -140,7 +136,7 @@ trait FaceDetectApi {
 			return (integer) ( $attributes );
 		}
 
-		return round($attributes,0);
+		return round( $attributes, 0 );
 	}
 
 	public function glasses( $attributes ) {
