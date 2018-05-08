@@ -64,7 +64,6 @@ class DashboardController extends Controller {
 			$charts = $this->chart();
 		}
 
-		session('welcome','hi baby');
 
 		return view( 'layouts.dashboard.index', compact( 'data', 'charts' ) );
 	}

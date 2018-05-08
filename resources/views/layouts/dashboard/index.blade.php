@@ -30,7 +30,7 @@
     <!-- ============================================================== -->
     <script src="{{asset('assets/plugins/toast-master/js/jquery.toast.js')}}"></script>
     <script type="text/javascript">
-        @if(session()->has('welcome'))
+
         $.toast({
             heading: 'پنل مدیریت',
             text: 'سلام {{auth()->user()->name}} گرامی به پنل مدیریت خوش آمدید',
@@ -41,7 +41,7 @@
             textAlign: 'right',
             showHideTransition: 'slide'
         });
-        @endif
+
 
     </script>
 @endsection
