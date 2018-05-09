@@ -2,11 +2,13 @@ $(function () {
     "use strict";
     $('.loading').hide();
 
-    $('.get-face').attr('src', $(this).find('.faces img:first-child').attr('src'));
+    var demo = $('.get-face').attr('src', $(this).find('.faces img:first-child').attr('src'));
+
 
     $(".faces img").on("click", function () {
         var url = $(this).attr("src");
         $('.get-face').attr('src', url);
+        detect(url);
     });
 
     $(".btn-img").on("click", function () {
@@ -53,6 +55,8 @@ $(function () {
                         '<tr> <th>سن : </th> <td>' + item.age + '</td> </tr> ' +
                         '<tr> <th>عینک :</th> <td>' + item.glasses + '</td> </tr>' +
                         ' <tr> <th>احساسات: </th> <td>' + item.emotion + '</td> </tr> ' +
+                        ' <tr> <th>آرایش چشم: </th> <td>' + item.makeup.eyeMakeup + '</td> </tr> ' +
+                        ' <tr> <th>آرایش لب: </th> <td>' + item.makeup.lipMakeup + '</td> </tr> ' +
                         '</tbody></table>' +
                         '</div>');
                     var naturalWidth = $('.demo-img-wrapper img')[0].naturalWidth;
@@ -127,6 +131,8 @@ $(function () {
                         '<tr> <th>سن : </th> <td>' + item.age + '</td> </tr> ' +
                         '<tr> <th>عینک :</th> <td>' + item.glasses + '</td> </tr>' +
                         ' <tr> <th>احساسات: </th> <td>' + item.emotion + '</td> </tr> ' +
+                        ' <tr> <th>آرایش چشم: </th> <td>' + item.makeup.eyeMakeup + '</td> </tr> ' +
+                        ' <tr> <th>آرایش لب: </th> <td>' + item.makeup.lipMakeup + '</td> </tr> ' +
                         '</tbody></table>' +
                         '</div>');
                     var naturalWidth = $('.demo-img-wrapper img')[0].naturalWidth;

@@ -17,16 +17,20 @@
                                 <th>تصویر</th>
                                 <th>آی پی</th>
                                 <th>جنسیت</th>
+                                <th>سن</th>
+                                <th>عینک</th>
+                                <th>احساسات</th>
                             </tr>
                             </thead>
                             <tbody>
-                            {{--@foreach($faces as $face)--}}
                                 <tr v-for="result in results">
                                     <td><img class="img-circle" width="50" height="50"  :src="result.image" alt=""></td>
                                     <td>@{{ result.ip }} </td>
                                     <td><span v-for="item in result.data" class="label label-danger">@{{item.gender}}</span></td>
+                                    <td><span v-for="item in result.data" class="label label-success">@{{item.age}}</span></td>
+                                    <td><span v-for="item in result.data" class="label label-primary">@{{item.glasses}}</span></td>
+                                    <td><span v-for="item in result.data" class="label label-warning">@{{item.emotion}}</span></td>
                                 </tr>
-                            {{--@endforeach--}}
                             </tbody>
                         </table>
                     </div>

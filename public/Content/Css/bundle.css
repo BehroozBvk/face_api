@@ -4184,6 +4184,10 @@ ul.social-icons li.pinterest:hover {
         left: 38% !important;
         position: absolute;
     }
+
+    .faces img {
+        margin-bottom: 10px !important;
+    }
 }
 
 @media (max-width: 480px) {
@@ -4193,6 +4197,10 @@ ul.social-icons li.pinterest:hover {
         display: block;
         width: 100%;
         border-radius: 25px
+    }
+
+    .faces img {
+        margin-bottom: 10px !important;
     }
 
 }

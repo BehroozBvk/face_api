@@ -76,20 +76,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 text-center about-box" data-aos="fade-up" data-aos-delay="200"><img
-                            src="{{asset('Content/img/icon-1.png')}}" class="img-responsive center-block" alt=""><h4>طراحی
+                            src="{{asset('Content/img/icon-1.png')}}" class="img-responsive center-block" alt=""><h4>ویژگی های
                         منحصر به
                         فرد</h4>
-                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</p></div>
+                    </div>
                 <div class="col-md-4 text-center about-box" data-aos="fade-up" data-aos-delay="400"><img
-                            src="{{asset('Content/img/icon-2.png')}}" class="img-responsive center-block" alt=""><h4>طراحی
-                        منحصر به
-                        فرد</h4>
-                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</p></div>
+                            src="{{asset('Content/img/icon-2.png')}}" class="img-responsive center-block" alt="">
+                    <h4>تشخیص با حساسیت بالا</h4>
+                   </div>
                 <div class="col-md-4 text-center about-box" data-aos="fade-up" data-aos-delay="600"><img
-                            src="{{asset('Content/img/icon-3.png')}}" class="img-responsive center-block" alt=""><h4>طراحی
-                        منحصر به
-                        فرد</h4>
-                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</p></div>
+                            src="{{asset('Content/img/icon-3.png')}}" class="img-responsive center-block" alt="">
+                    <h4>تشخیص حالات صورت</h4>
+                    </div>
             </div>
         </div>
     </section>
@@ -110,8 +108,8 @@
                                     <div class="features-icon"><img src="{{asset('Content/img/icon-4.png')}}"
                                                                     class="img-responsive"
                                                                     alt=""></div>
-                                    <div class="features-details"><h5>لورم ایپسوم</h5>
-                                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم.</p></div>
+                                    <div class="features-details"><h5>تسخیص لبخند</h5>
+                                        <p>قابلیت تشخیص لبخند تصویر</p></div>
                                 </div>
                                 <div class="clearfix"></div>
                             </li>
@@ -120,8 +118,8 @@
                                     <div class="features-icon"><img src="{{asset('Content/img/icon-5.png')}}"
                                                                     class="img-responsive"
                                                                     alt=""></div>
-                                    <div class="features-details"><h5>لورم ایپسوم</h5>
-                                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم.</p></div>
+                                    <div class="features-details"><h5>تشخیص جنسیت</h5>
+                                        <p>قابلیت تشخیص مرد و زن بودن تصویر به صورت مجزا</p></div>
                                 </div>
                                 <div class="clearfix"></div>
                             </li>
@@ -130,8 +128,8 @@
                                     <div class="features-icon"><img src="{{asset('Content/img/icon-6.png')}}"
                                                                     class="img-responsive"
                                                                     alt=""></div>
-                                    <div class="features-details"><h5>لورم ایپسوم</h5>
-                                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم.</p></div>
+                                    <div class="features-details"><h5>تشخیص عینک</h5>
+                                        <p>قابلیت تشخیص داشتن عینک آفتابی،شنا،مطالعه و...</p></div>
                                 </div>
                                 <div class="clearfix"></div>
                             </li>
@@ -149,8 +147,8 @@
                                     <div class="features-icon"><img src="{{asset('Content/img/icon-7.png')}}"
                                                                     class="img-responsive"
                                                                     alt=""></div>
-                                    <div class="features-details"><h5>لورم ایپسوم</h5>
-                                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم.</p></div>
+                                    <div class="features-details"><h5>حدس سن</h5>
+                                        <p>قابلیت تخمین زدن سن اشخاص</p></div>
                                 </div>
                                 <div class="clearfix"></div>
                             </li>
@@ -159,8 +157,8 @@
                                     <div class="features-icon"><img src="{{asset('Content/img/icon-8.png')}}"
                                                                     class="img-responsive"
                                                                     alt=""></div>
-                                    <div class="features-details"><h5>لورم ایپسوم</h5>
-                                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم.</p></div>
+                                    <div class="features-details"><h5>تشخیص احساس</h5>
+                                        <p>قابلیت تشخیص احساس شاد بودن ، غم انگیز، متعجب و...</p></div>
                                 </div>
                                 <div class="clearfix"></div>
                             </li>
@@ -169,8 +167,8 @@
                                     <div class="features-icon"><img src="{{asset('Content/img/icon-9.png')}}"
                                                                     class="img-responsive"
                                                                     alt=""></div>
-                                    <div class="features-details"><h5>لورم ایپسوم</h5>
-                                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم.</p></div>
+                                    <div class="features-details"><h5> تشخیص مکاپ</h5>
+                                        <p>قابلیت تشخیص مکاپ خانم ها</p></div>
                                 </div>
                                 <div class="clearfix"></div>
                             </li>
@@ -191,8 +189,6 @@
                     <div class="col-md-6">
                         <section id="subscribe" class="padding-50">
                             <div class="space-25"></div>
-                            {{--<form action="{{route('face.detect')}}" method="post">--}}
-                            {{--                            {{csrf_field()}}--}}
                             <div class="subcribe-form">
                                 <input class="form-control img-url" required="required" name="urlImg" type="text" placeholder=" آدرس تصویر "
                                        required>
@@ -203,8 +199,7 @@
 
                             <div class="space-15"></div>
 
-                            {{--<form action="{{route('face.detect')}}" method="post" enctype="multipart/form-data">--}}
-                                                        {{csrf_field()}}
+                            {{csrf_field()}}
                             <div class="subcribe-form">
                                 <input class="form-control img-upload" name="imgUpload" type="file"
                                        placeholder=" آدرس تصویر "
@@ -212,7 +207,6 @@
                                 <button class="btn btn-default btn-upload" >انتخاب</button>
                             </div>
                             <div class="space-15"></div>
-                            {{--</form>--}}
                         </section>
                         <div class="space-15"></div>
 
@@ -233,22 +227,22 @@
                     <div class="space-25"></div>
 
                     <div class="col-md-2 col-sm-6 text-center">
-                        <img src="{{asset('assets/images/users/1.jpg')}}" class="img-responsive img-rounded" alt="">
+                        <img src="{{asset('http://www.irannaz.com/images/2017/06/540955132-irannaz-com.jpg')}}"  class="img-responsive img-rounded" alt="">
                     </div>
                     <div class="col-md-2 col-sm-6 text-center">
-                        <img src="{{asset('assets/images/users/2.jpg')}}" class="img-responsive img-rounded" alt="">
+                        <img src="{{asset('http://dl.topnaz.com/2015/05/19761641_301367760274301_3283231859017777152_n.jpg')}}" class="img-responsive img-rounded" alt="">
                     </div>
                     <div class="col-md-2 col-sm-6 text-center">
-                        <img src="{{asset('assets/images/users/3.jpg')}}" class="img-responsive img-rounded" alt="">
+                        <img src="{{asset('http://www.irannaz.com/images/2017/06/2054254739-irannaz-com.jpg')}}" class="img-responsive img-rounded" alt="">
                     </div>
                     <div class="col-md-2 col-sm-6 text-center">
-                        <img src="{{asset('assets/images/users/4.jpg')}}" class="img-responsive img-rounded" alt="">
+                        <img src="{{asset('http://www.irannaz.com/images/2017/06/904702384-irannaz-com.jpg')}}" class="img-responsive img-rounded" alt="">
                     </div>
                     <div class="col-md-2 col-sm-6 text-center">
-                        <img src="{{asset('assets/images/users/7.jpg')}}" class="img-responsive img-rounded" alt="">
+                        <img src="{{asset('http://www.studio-design.ir/wp-content/uploads/2018/05/3.jpg')}}" class="img-responsive img-rounded" alt="">
                     </div>
                     <div class="col-md-2 col-sm-6 text-center">
-                        <img src="{{asset('assets/images/users/8.jpg')}}" class="img-responsive img-rounded" alt="">
+                        <img src="{{asset('http://dl.topnaz.com/2015/07/20759838_558189964304915_5945710162009391104_n.jpg')}}" class="img-responsive img-rounded" alt="">
                     </div>
                 </div>
             </div>

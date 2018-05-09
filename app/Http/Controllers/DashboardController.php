@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\FaceDetect;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller {
 
@@ -68,6 +67,10 @@ class DashboardController extends Controller {
 		return view( 'layouts.dashboard.index', compact( 'data', 'charts' ) );
 	}
 
+	/**
+	 * get data for chart on dashboard
+	 * @return array
+	 */
 	public function chart() {
 
 		$data = array();
@@ -100,6 +103,15 @@ class DashboardController extends Controller {
 
 	}
 
+	/**
+	 * convert gregorian date to jalali
+	 * @param $gy
+	 * @param $gm
+	 * @param $gd
+	 * @param string $mod
+	 *
+	 * @return array|string
+	 */
 	public function gregorian_to_jalali( $gy, $gm, $gd, $mod = '' ) {
 		$g_d_m = array( 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334 );
 		if ( $gy > 1600 ) {
@@ -125,6 +137,15 @@ class DashboardController extends Controller {
 		return ( $mod == '' ) ? array( $jy, $jm, $jd ) : $jy . $mod . $jm . $mod . $jd;
 	}
 
+	/**
+	 * @param $format
+	 * @param string $timestamp
+	 * @param string $none
+	 * @param string $time_zone
+	 * @param string $tr_num
+	 *
+	 * @return mixed|string
+	 */
 	public function jdate( $format, $timestamp = '', $none = '', $time_zone = 'Asia/Tehran', $tr_num = 'fa' ) {
 
 		$T_sec = 0;/* <= رفع خطاي زمان سرور ، با اعداد '+' و '-' بر حسب ثانيه */
@@ -347,6 +368,13 @@ class DashboardController extends Controller {
 		return ( $tr_num != 'en' ) ? $this->tr_num( $out, 'fa', '.' ) : $out;
 	}
 
+	/**
+	 * @param $str
+	 * @param string $mod
+	 * @param string $mf
+	 *
+	 * @return mixed
+	 */
 	public function tr_num( $str, $mod = 'en', $mf = '٫' ) {
 		$num_a = array( '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.' );
 		$key_a = array( '۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹', $mf );
@@ -354,6 +382,12 @@ class DashboardController extends Controller {
 		return ( $mod == 'fa' ) ? str_replace( $num_a, $key_a, $str ) : str_replace( $key_a, $num_a, $str );
 	}
 
+	/**
+	 * @param $array
+	 * @param string $mod
+	 *
+	 * @return string
+	 */
 	public function jdate_words( $array, $mod = '' ) {
 		foreach ( $array as $type => $num ) {
 			$num = (int) $this->tr_num( $num );

@@ -13,9 +13,10 @@
 @endsection
 @section('script')
     <script type="text/javascript">
+
         @if(isset($charts))
             var items = {!!json_encode($charts) !!};
-        @@else
+        @else
             var items = null;
         @endif
     </script>

@@ -8,10 +8,6 @@
 
 namespace App\Http\Traits;
 
-use App\FaceDetect;
-use GuzzleHttp\Client;
-use GuzzleHttp\Exception\ClientException;
-
 /**
  * Trait FaceDetectApi
  * @package App\Http\Traits
@@ -37,14 +33,15 @@ trait FaceDetectApi {
 
 	/**
 	 * @param $url
-	 *
+	 * send image (url or file) to api server microsoft
 	 * @return string
 	 */
 	public function faceDetect( $img ) {
-
-		$request = new \HTTP_Request2( 'https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect' );
+		// send request to endpoint api
+		$request = new \HTTP_Request2( $this->endpoint.'/detect' );
 		$url     = $request->getUrl();
 
+		// check if image is file set header application/octet-stream otherwise application/json for url input
 		if ( is_file( $img ) ) {
 			$content_type = 'application/octet-stream';
 			$file         = $img;
@@ -89,7 +86,7 @@ trait FaceDetectApi {
 	/**
 	 * @param $faces
 	 * @param $image
-	 *
+	 * proccess face
 	 * @return array|\Illuminate\Support\Collection
 	 */
 	public function detectProcess( $faces, $image ) {
@@ -122,7 +119,6 @@ trait FaceDetectApi {
 		return $attributes;
 	}
 
-
 	/**
 	 * @param $attributes
 	 */
@@ -131,6 +127,11 @@ trait FaceDetectApi {
 		return $attributes == 'female' ? 'زن' : 'مرد';
 	}
 
+	/**
+	 * @param $attributes
+	 *
+	 * @return float|int
+	 */
 	public function age( $attributes ) {
 		if ( $attributes > 1 ) {
 			return (integer) ( $attributes );
@@ -139,6 +140,11 @@ trait FaceDetectApi {
 		return round( $attributes, 0 );
 	}
 
+	/**
+	 * @param $attributes
+	 *
+	 * @return string
+	 */
 	public function glasses( $attributes ) {
 		switch ( $attributes ) {
 			case 'NoGlasses':
@@ -156,6 +162,11 @@ trait FaceDetectApi {
 		}
 	}
 
+	/**
+	 * @param $attributes
+	 *
+	 * @return array
+	 */
 	public function makeup( $attributes ) {
 		$makeup = array();
 		if ( $attributes['eyeMakeup'] == true ) {
