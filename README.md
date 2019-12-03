@@ -4,8 +4,6 @@
 
 **Name :** Behrooz Valikhani
 
-**Phone :** 09191750108
-
 **Email :** behrooz.valikhani@gmail.com
 
 
